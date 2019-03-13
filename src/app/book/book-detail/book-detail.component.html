@@ -1,12 +1,12 @@
 <section id="bookDetails" *ngIf="book">
   <div class="upper-section">
     <div class="row">
-      <div class="col-md-6">
-        <img src="{{book.image}}" alt="">
+      <div class="col-md-6" style="text-align: center;">
+        <img src="{{book.image}}" alt="" style="max-width: 60%;">
       </div>
       <div class="col-md-6">
         <!-- Will be replaced with map !!!! -->
-        <img src="{{book.image}}" alt="">
+        <buka-map [location]="book.city + ', ' +  book.street"></buka-map>
       </div>
     </div>
   </div>
