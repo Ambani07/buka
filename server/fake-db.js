@@ -15,6 +15,8 @@ class FakeDB{
             negotiable: true,
             previousOwners: 2,
             university: "UNISA",
+            city: "Johannesburg",
+            street: "28 Pioneer Ave, Florida Park",
             createdAt: "06/03/2019"
           },
           {
@@ -30,6 +32,8 @@ class FakeDB{
             negotiable: false,
             previousOwners: 0,
             university: "UJ",
+            city: "Johannesburg",
+            street: "Kingsway Ave",
             createdAt: "06/03/2019"
           },
           {
@@ -45,6 +49,8 @@ class FakeDB{
             negotiable: false,
             previousOwners: 4,
             university: "Wits",
+            city: "Johannesburg",
+            street: "Jan Smuts Ave",
             createdAt: "22/01/2019"
           },
           {
@@ -60,6 +66,8 @@ class FakeDB{
             negotiable: true,
             previousOwners: 2,
             university: "UP",
+            city: "Pretoria",
+            street: "University Rd",
             createdAt: "15/02/2019"
           }];
     }

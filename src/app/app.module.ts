@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 
 import { BookModule } from './book/book.module';
-import { MapComponent } from './common/map/map.component';
+
 
 
 const routes: Routes = [
@@ -16,9 +16,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    MapComponent
-
+    HeaderComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

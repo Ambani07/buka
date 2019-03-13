@@ -11,5 +11,7 @@ export class Book{
     negotiable: boolean;
     previousOwners: number;
     university: string;
+    city: string;
+    street: string;
     createdAt: string;
 }

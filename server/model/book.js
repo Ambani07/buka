@@ -14,6 +14,8 @@ const bookSchema = new Schema({
     negotiable: String,Boolean,
     previousOwners: Number,
     university: String,
+    city: String,
+    street: String,
     createdAt: String
 });
 

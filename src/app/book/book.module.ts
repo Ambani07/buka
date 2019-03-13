@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { MapModule } from '../common/map/map.module';
 
 import { BookListComponent } from './book-list/book-list.component';
 import { BookListItemComponent } from './book-list-item/book-list-item.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forRoot(routes),
-        HttpClientModule
+        HttpClientModule,
+        MapModule
     ],
     providers: [BookService]
 })
