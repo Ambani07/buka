@@ -1,0 +1,60 @@
+<section id="bookDetails" *ngIf="book">
+  <div class="upper-section">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{book.image}}" alt="">
+      </div>
+      <div class="col-md-6">
+        <!-- Will be replaced with map !!!! -->
+        <img src="{{book.image}}" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="book">
+          
+          <h1 class="book-title">{{book.title}}</h1>
+
+
+          <div class="rental-room-info mb-3">
+            <span><i class="fa fa-university"></i> {{book.university}}</span> <br>
+            
+          </div>
+
+          <p class="book-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor odit nostrum 
+            officiis error sunt odio hic. Distinctio, ea dignissimos perspiciatis libero 
+            sit expedita dolorum placeat laudantium perferendis tenetur vitae repellat.
+          </p>
+          <hr>
+          <div class="book-assets">
+            <h3 class="title">Book Information</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <span><i class="fa fa-user"></i> Author</span>
+                <span><i class="fa fa-calendar"></i> Release Year</span>
+                <span><i class="fa fa-location-arrow"></i> Edition</span>
+                <span><i class="fa fa-barcode"></i> ISBN</span>
+                <span><i class="fa fa-users"></i> Previous Ownser(s)</span>
+                <span><i class="fa fa-list-alt"></i> Category</span>
+
+              </div>
+              <div class="col-md-6">
+                <span>{{book.author}}</span>
+                <span>{{book.year}}</span>
+                <span>{{book.edition}}</span>
+                <span>{{book.isbn}}</span>
+                <span>{{book.previousOwners}}</span>
+                <span>{{book.category}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"> BUY</div>
+    </div>
+  </div>
+</section>

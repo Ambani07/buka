@@ -1,0 +1,12 @@
+
+<a routerLink="/book/{{bookItem._id}}">
+  <div class="card bwm-card">
+    <img class="card-img-top" src="{{bookItem.image}}" alt="book image" style="max-width: 60%;">
+    <div class="card-block">
+      <h6 class="card-subtitle {{bookItem.category}}">{{bookItem.category}} &#183; {{bookItem.university}}</h6>
+      <h4 class="card-title">{{bookItem.title}}</h4>
+      <p class="card-text">R {{bookItem.price}} &#183; {{bookItem.negotiable ? 'negotiable' : 'non-negotiable'}}</p>
+      <a href="#" class="card-link">More Info</a>
+    </div>
+  </div>
+  </a>
