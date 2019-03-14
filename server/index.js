@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const config = require('./config/dev');
 const FakeDB = require('./fake-db');
 const booksRoutes = require('./routes/books');
+const usersRoutes = require('./routes/users');
 
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
@@ -13,18 +15,12 @@ mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
 
 const app = express(); //call express 
 
+//body parser middleware
+app.use(bodyParser.json());
+
 app.use('/api/v1/books', booksRoutes);
 
-// app.get('/api/v1/books', function(req, res){
-//     res.json({'success': true})
-// });
-
-app.get('/api/v1/books/:id', function(req, res){
-    const bookId = req.params.id;
-    res.json({'success': bookId});
-});
-
-// app.use()
+app.use('/api/v1/users', usersRoutes);
 
 const PORT = process.env.PORT || 3001;
 

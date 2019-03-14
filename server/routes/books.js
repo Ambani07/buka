@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Book = require('../model/book');
 
+const UserCrlt = require('../controllers/user');
+
+router.get('/secret', UserCrlt.authMiddleware, function(req,res){
+    res.json({"secret": true});
+});
+
 router.get('', function(req, res){
 
 
