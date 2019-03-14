@@ -1,8 +1,9 @@
 const Book = require('./model/book');
+const User = require('./model/user');
 
 class FakeDB{
     constructor(){
-        this.book = [{
+        this.books = [{
             id: "1",
             title: "Full stack angular for java developers",
             edition: 4,
@@ -16,8 +17,7 @@ class FakeDB{
             previousOwners: 2,
             university: "UNISA",
             city: "Johannesburg",
-            street: "28 Pioneer Ave, Florida Park",
-            createdAt: "06/03/2019"
+            street: "28 Pioneer Ave, Florida Park"
           },
           {
             id: "2",
@@ -33,8 +33,7 @@ class FakeDB{
             previousOwners: 0,
             university: "UJ",
             city: "Johannesburg",
-            street: "Kingsway Ave",
-            createdAt: "06/03/2019"
+            street: "Kingsway Ave"
           },
           {
             id: "3",
@@ -50,8 +49,7 @@ class FakeDB{
             previousOwners: 4,
             university: "Wits",
             city: "Johannesburg",
-            street: "Jan Smuts Ave",
-            createdAt: "22/01/2019"
+            street: "Jan Smuts Ave"
           },
           {
             id: "4",
@@ -67,25 +65,38 @@ class FakeDB{
             previousOwners: 2,
             university: "UP",
             city: "Pretoria",
-            street: "University Rd",
-            createdAt: "15/02/2019"
+            street: "University Rd"
           }];
+
+          this.users = [{
+            username: "Test User",
+            email: "test@gmail.com",
+            password: "testtest"
+        }];
     }
 
-    async clearnDB(){
-      await Book.remove();
+    async cleanDB(){
+      await User.remove({});
+      await Book.remove({});
     }
 
     pushBookToDB(){
-        this.book.forEach((book) => {
-            const newBooks = new Book(book);
+      const user = new User(this.users[0]);
 
-            newBooks.save();
+        this.books.forEach((book) => {
+            const newBook = new Book(book);
+            newBook.user = user;
+
+            user.books.push(newBook);
+
+            newBook.save();
         });
+
+        user.save();
     }
 
-    seedDB(){
-        this.clearnDB();
+    async seedDB(){
+      await this.cleanDB();
         this.pushBookToDB();
     }
 }
