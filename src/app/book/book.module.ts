@@ -11,13 +11,14 @@ import { BookComponent } from './book.component';
 import { BookService } from './shared/book.service';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 
+import { AuthGuard } from '../auth/shared/auth.guard';
 
 const routes: Routes = [
     {path: 'books',
     component: BookComponent,
     children: [
         {path: '', component: BookListComponent},
-        {path: ':bookId', component: BookDetailComponent}
+        {path: ':bookId', component: BookDetailComponent, canActivate: [AuthGuard]}
     ]
     }
 ];

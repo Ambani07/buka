@@ -63,6 +63,10 @@ export class AuthService{
   public getUsername() : string{
     return this.decodedToken.username;
   }
+
+  public getAuthToken(): string{
+    return localStorage.getItem('book_auth');
+  }
   
 
 
