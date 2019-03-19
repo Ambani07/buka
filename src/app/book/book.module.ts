@@ -13,7 +13,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 
 
 const routes: Routes = [
-    {path: 'book',
+    {path: 'books',
     component: BookComponent,
     children: [
         {path: '', component: BookListComponent},
