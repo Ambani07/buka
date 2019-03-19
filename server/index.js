@@ -10,7 +10,7 @@ const usersRoutes = require('./routes/users');
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
     const fakeDB = new FakeDB();
 
-    fakeDB.seedDB();
+    // fakeDB.seedDB();
 });
 
 const app = express(); //call express 

@@ -7,21 +7,23 @@ import { HeaderComponent } from './common/header/header.component';
 
 import { BookModule } from './book/book.module';
 
-
+import { AuthModule } from './auth/auth.module';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/book' , pathMatch: 'full'}
+  {path: '', redirectTo: '/books' , pathMatch: 'full'}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    BookModule
+    BookModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
